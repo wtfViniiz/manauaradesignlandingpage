@@ -6,6 +6,7 @@ type ContactPayload = {
   email?: string;
   telefone?: string;
   mensagem?: string;
+  servico?: string;
   termos?: boolean;
   website?: string;
 };
@@ -41,6 +42,7 @@ export async function POST(request: Request) {
     const email = sanitizeText(body.email, 160).toLowerCase();
     const telefone = sanitizeText(body.telefone, 24);
     const mensagem = sanitizeText(body.mensagem, 1200);
+    const servico = sanitizeText(body.servico, 120);
     const termos = body.termos === true;
 
     if (!nome || !email || !telefone || !mensagem || !termos) {
@@ -54,8 +56,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: "Informe um email válido." }, { status: 400 });
     }
 
+    const openingLine = servico
+      ? `Olá! Vim pelo site e gostaria de um orçamento para: ${servico}.`
+      : "Olá! Vim pelo site e gostaria de um orçamento.";
+
     const text = encodeURIComponent(
-      `Olá! Vim pelo site e gostaria de um orçamento.%0A%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AMensagem: ${mensagem}`,
+      `${openingLine}\n\nNome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`,
     );
 
     return NextResponse.json(

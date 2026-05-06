@@ -2,10 +2,13 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 export function ContactForm() {
+  const searchParams = useSearchParams();
+  const selectedService = searchParams.get("servico")?.trim() ?? "";
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
   const [whatsappUrl, setWhatsappUrl] = useState("");
@@ -24,6 +27,7 @@ export function ContactForm() {
       email: String(formData.get("email") ?? ""),
       telefone: String(formData.get("telefone") ?? ""),
       mensagem: String(formData.get("mensagem") ?? ""),
+      servico: String(formData.get("servico") ?? ""),
       termos: formData.get("termos") === "on",
       website: String(formData.get("website") ?? ""),
     };
@@ -64,6 +68,11 @@ export function ContactForm() {
         comercial.
       </p>
       <div className="mt-6 space-y-4">
+        {selectedService ? (
+          <p className="rounded-lg bg-yellow-50 px-3 py-2 text-sm text-zinc-800">
+            Serviço selecionado: <strong>{selectedService}</strong>
+          </p>
+        ) : null}
         <label className="block text-sm font-medium text-zinc-700">
           Nome
           <input
@@ -102,8 +111,14 @@ export function ContactForm() {
             rows={5}
             className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2.5 outline-none ring-yellow-300 focus:ring"
             placeholder="Conte sobre seu projeto e necessidades."
+            defaultValue={
+              selectedService
+                ? `Gostaria de solicitar um orçamento para o serviço: ${selectedService}.`
+                : undefined
+            }
           />
         </label>
+        <input type="hidden" name="servico" value={selectedService} />
         <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" />
         <label className="flex items-center gap-2 text-sm text-zinc-700">
           <input required type="checkbox" name="termos" className="h-4 w-4 rounded border-zinc-300" />

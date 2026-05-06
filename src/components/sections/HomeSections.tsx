@@ -126,7 +126,7 @@ export function ServicesSection() {
                 </div>
                 <p className="mt-3 text-sm text-zinc-600">{service.description}</p>
                 <Link
-                  href="/contato"
+                  href={`/contato?servico=${encodeURIComponent(service.title)}`}
                   className="mt-6 inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-black"
                 >
                   Solicitar orçamento
