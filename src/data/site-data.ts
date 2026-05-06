@@ -15,7 +15,7 @@ export const serviceDropdownItems = [
 ];
 
 export const specialtyDropdownItems = [
-  "Identidade visual",
+  "Camisas personalizadas",
   "Impressões rápidas",
   "Comunicação visual completa",
   "Design gráfico",
@@ -25,12 +25,12 @@ export const services = [
   {
     title: "Cartões de visita",
     description:
-      "Impresso em couché 300g ou supremo 300g, com opções 9x5 cm e acabamento fosco, brilho ou laminação para reforçar a apresentação da marca.",
+      "Impresso em papel triplêx 270g, com dimensões 9x5 cm e acabamento em verniz, brilho e laminação para reforçar a apresentação da marca.",
   },
   {
     title: "Banners e lonas",
     description:
-      "Produzidos em lona 440g com impressão de alta resolução, ideais para fachadas, promoções e eventos em formatos personalizados.",
+      "Produzidos em lona 320g com impressão de alta resolução, ideais para fachadas, promoções e eventos em formatos personalizados.",
   },
   {
     title: "Fachadas comerciais",
@@ -45,12 +45,12 @@ export const services = [
   {
     title: "Panfletos",
     description:
-      "Impressão offset ou digital em couché 90g, 115g ou 150g, em formatos A5 e A6, com ótima definição para campanhas promocionais.",
+      "Impressão couchê 90g, em formatos A5 e A6, com ótima definição para campanhas promocionais.",
   },
   {
-    title: "Identidade visual",
+    title: "Camisas 100% personalizadas",
     description:
-      "Criação de logotipo, paleta de cores, tipografia e manual de aplicação para manter consistência da marca em todos os materiais.",
+      "Produção em tecido helanca ou dryfit, com personalização total para eventos, equipes, ações promocionais e uniformes da sua marca.",
   },
   {
     title: "Comunicação visual completa",
@@ -65,7 +65,7 @@ export const services = [
   {
     title: "Design gráfico",
     description:
-      "Desenvolvimento de artes para redes sociais, catálogos, cardápios e materiais institucionais com foco em clareza e conversão.",
+      "Desenvolvimento de artes, e materiais de divulgação com foco em clareza e conversão.",
   },
 ];
 
@@ -103,21 +103,21 @@ export const testimonials = [
   {
     name: "Ana Paula Souza",
     date: "12 de março de 2026",
-    image: "https://placehold.co/96x96/png",
+    image: "/womanmodel1.png",
     content:
       "A fachada da minha loja ficou impecável. O atendimento foi rápido, esclareceram todas as dúvidas e entregaram no prazo combinado.",
   },
   {
     name: "Carlos Menezes",
     date: "28 de fevereiro de 2026",
-    image: "https://placehold.co/96x96/png",
+    image: "/manAndWomanModel1.png",
     content:
       "Solicitei banners e panfletos para uma campanha local e o resultado superou a expectativa. Impressão com ótima qualidade e ótimo custo-benefício.",
   },
   {
     name: "Juliana Ribeiro",
     date: "05 de janeiro de 2026",
-    image: "https://placehold.co/96x96/png",
+    image: "/womanmodel2.png",
     content:
       "Eles fizeram toda a identidade visual da minha marca e isso ajudou muito no posicionamento da empresa. Trabalho profissional do início ao fim.",
   },

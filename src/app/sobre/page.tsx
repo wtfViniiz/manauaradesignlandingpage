@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Eye, Goal, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Eye, Goal, Sparkles } from "lucide-react";
 import { DifferentialsSection } from "@/components/sections/HomeSections";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -37,8 +37,8 @@ export default function SobrePage() {
             </p>
             <h1 className="text-4xl font-bold md:text-5xl">Transformamos ideias em presença de marca</h1>
             <p className="mt-5 max-w-xl text-zinc-200">
-              Unimos estrategia, design e produção grafica para criar materiais que comunicam valor e
-              ajudam empresas a vender mais com consistencia visual.
+              Unimos estratégia, design e produção gráfica para criar materiais que comunicam valor e
+              ajudam empresas a vender mais com consistência visual.
             </p>
             <Link
               href="/contato"
@@ -52,11 +52,11 @@ export default function SobrePage() {
             <p className="text-lg font-semibold text-yellow-300">Atendimento consultivo e local</p>
             <p className="mt-3 text-zinc-200">
               Nosso processo começa no entendimento do seu objetivo comercial, passa pela criação
-              personalizada e termina com execução grafica de alta qualidade.
+              personalizada e termina com execução gráfica de alta qualidade.
             </p>
             <div className="mt-6 grid gap-3 text-sm text-zinc-100">
               <p className="rounded-lg border border-zinc-600/80 bg-zinc-900/40 px-4 py-3">
-                Briefing estrategico e planejamento visual
+                Briefing estratégico e planejamento visual
               </p>
               <p className="rounded-lg border border-zinc-600/80 bg-zinc-900/40 px-4 py-3">
                 Produção com controle de acabamento e prazo
@@ -69,35 +69,64 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 md:grid-cols-2 md:px-6">
-          <div>
-            <SectionHeading title="Conheça o Manauara Design" subtitle="Quem somos" />
-            <p className="mt-5 max-w-4xl text-zinc-600">
-              Acreditamos que todas as empresas tem potencial para alcançar o sucesso. Nossa missão é
-              capacitar empreendedores com uma comunicação visual eficaz.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-7">
-            <p className="text-lg font-semibold text-zinc-900">Por que os clientes escolhem o Manauara Design?</p>
-            <ul className="mt-4 space-y-3 text-sm text-zinc-600">
-              <li>Projetos alinhados ao objetivo de vendas e posicionamento.</li>
-              <li>Padronização visual para fortalecer reconhecimento da marca.</li>
-              <li>Execução agil e acompanhamento em todas as etapas.</li>
-            </ul>
+      <section className="bg-white py-16 md:py-20">
+        <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
+          <SectionHeading
+            title="Uma parceria estratégica para posicionar sua marca"
+            subtitle="Quem somos"
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <article className="rounded-3xl border border-zinc-200 bg-zinc-50 p-7">
+              <h3 className="text-xl font-semibold text-zinc-900">O que você ganha com a Manauara Design</h3>
+              <ul className="mt-5 space-y-3 text-sm text-zinc-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-yellow-600" />
+                  Projetos alinhados ao seu objetivo de vendas e posicionamento.
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-yellow-600" />
+                  Padronização visual para fortalecer o reconhecimento da sua marca.
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-yellow-600" />
+                  Execução ágil com acompanhamento em todas as etapas.
+                </li>
+              </ul>
+            </article>
+            <article className="rounded-3xl border border-zinc-200 bg-zinc-900 p-7 text-white">
+              <h3 className="text-xl font-semibold">Nossa forma de trabalhar</h3>
+              <p className="mt-3 text-zinc-200">
+                Acreditamos que toda empresa pode crescer com uma comunicação visual bem planejada.
+                Por isso, atuamos de ponta a ponta: diagnóstico, criação, produção e entrega.
+              </p>
+              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+                <div className="rounded-xl bg-white/10 px-3 py-4">
+                  <p className="text-2xl font-bold text-yellow-300">1</p>
+                  <p className="mt-1 text-xs text-zinc-200">Briefing</p>
+                </div>
+                <div className="rounded-xl bg-white/10 px-3 py-4">
+                  <p className="text-2xl font-bold text-yellow-300">2</p>
+                  <p className="mt-1 text-xs text-zinc-200">Criação</p>
+                </div>
+                <div className="rounded-xl bg-white/10 px-3 py-4">
+                  <p className="text-2xl font-bold text-yellow-300">3</p>
+                  <p className="mt-1 text-xs text-zinc-200">Entrega</p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section className="bg-zinc-100 py-16">
+      <section className="bg-zinc-100 py-16 md:py-20">
         <div className="mx-auto w-full max-w-6xl px-4 md:px-6">
-          <SectionHeading title="Conheça o Manauara Design" subtitle="Quem somos" />
+          <SectionHeading title="Missão, visão e valores que guiam cada projeto" subtitle="Nossa essência" />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             <article className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
               <div className="inline-flex rounded-xl bg-yellow-100 p-3 text-yellow-700">
                 <Goal className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-zinc-900">Nossa missao</h3>
+              <h3 className="mt-4 text-xl font-semibold text-zinc-900">Nossa missão</h3>
               <p className="mt-3 text-sm text-zinc-600">
                 Entregar soluções de comunicação visual com qualidade e impacto para fortalecer marcas.
               </p>
@@ -106,7 +135,7 @@ export default function SobrePage() {
               <div className="inline-flex rounded-xl bg-yellow-100 p-3 text-yellow-700">
                 <Eye className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-semibold text-zinc-900">Nossa visao</h3>
+              <h3 className="mt-4 text-xl font-semibold text-zinc-900">Nossa visão</h3>
               <p className="mt-3 text-sm text-zinc-600">
                 Ser referência regional em serviços gráficos e design para negócios em crescimento.
               </p>

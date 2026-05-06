@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { company } from "@/data/site-data";
 
 type ContactPayload = {
   nome?: string;
@@ -9,7 +10,14 @@ type ContactPayload = {
   website?: string;
 };
 
-const whatsappBase = "https://wa.me/92992955059";
+function getWhatsappBaseUrl() {
+  const fallback = "https://wa.me/9292955059";
+  const raw = company.whatsapp || "";
+  const digits = raw.replace(/\D/g, "");
+
+  if (!digits) return fallback;
+  return `https://wa.me/${digits}`;
+}
 
 function sanitizeText(value: unknown, maxLength: number) {
   if (typeof value !== "string") return "";
@@ -53,7 +61,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message: "Solicitação recebida com sucesso.",
-        whatsappUrl: `${whatsappBase}?text=${text}`,
+        whatsappUrl: `${getWhatsappBaseUrl()}?text=${text}`,
       },
       { status: 200 },
     );
