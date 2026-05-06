@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { Mail, MapPin, MessageCircleMore, Phone, Timer } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { ContactForm } from "@/components/forms/ContactForm";
@@ -63,7 +64,16 @@ export default function ContatoPage() {
 
       <section className="bg-zinc-50 py-16">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 md:grid-cols-2 md:px-6">
-          <ContactForm />
+          <Suspense
+            fallback={
+              <div className="order-2 rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm md:order-1 md:p-8">
+                <h2 className="text-2xl font-bold text-zinc-900">Solicite seu orçamento</h2>
+                <p className="mt-2 text-sm text-zinc-600">Carregando formulário...</p>
+              </div>
+            }
+          >
+            <ContactForm />
+          </Suspense>
 
           <div className="order-1 space-y-6 md:order-2">
             <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
